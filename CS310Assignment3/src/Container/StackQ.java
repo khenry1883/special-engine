@@ -16,37 +16,42 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	@Override
 	public boolean isEmpty() {
-		if(enQStack.top == null || deQStack.top == null)){
+		if (enQStack.isEmpty() && deQStack.isEmpty()) {
 			return true;
-		} else { 
+		} else {
 			return false;
 		}
 	}
 
 	@Override
 	public void emptyQueue() {
-		// TODO Auto-generated method stub
-
+		enQStack.emptyStack();
+		deQStack.emptyStack();
 	}
 
 	@Override
 	public void enQ(E obj) {
-		// Add new node to the top of the enQStack
-		// Empty condition for the enQStack is only to maintain the top reference
-
+		enQStack.push(obj); // Add new node to the top of the enQStack
 	}
 
 	@Override
 	public E deQ() {
-		// pop the topmost element from deQStack
-		// if deQStack is empty, pop all the elements from the enQStack and push them
-		// one by one into the deQStack then pop from deQStack to perform deQ()
-		return null;
+		if (!deQStack.isEmpty()) {
+			return deQStack.pop(); // pop the topmost element from deQStack
+		} else {
+			while (!enQStack.isEmpty()) {
+				E temp = enQStack.pop();
+				deQStack.push(temp);
+			}
+			return deQ();
+		}
 	}
 
 	@Override
 	public E peek() {
-
+		if (deQStack != null && enQStack != null) {
+			return deQStack.peek(); // use stack's peek method
+		}
 		return null;
 	}
 

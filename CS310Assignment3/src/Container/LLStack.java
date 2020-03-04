@@ -40,8 +40,8 @@ public class LLStack<E> implements StackSpecs<E> {
 
 	@Override
 	public void emptyStack() {
-		// TODO Auto-generated method stub
-
+		this.top = null;
+		this.stackSize = 0;
 	}
 
 	@Override
@@ -49,6 +49,7 @@ public class LLStack<E> implements StackSpecs<E> {
 		Node<E> newNode = new Node<E>(obj);
 		newNode.setNextNode(this.top);
 		this.top = newNode;
+		stackSize++;
 
 	}
 
@@ -56,13 +57,14 @@ public class LLStack<E> implements StackSpecs<E> {
 	public E pop() { // always delete at the beginning
 		Node<E> toDel = this.top;
 		this.top = this.top.getNextNode();
+		stackSize--;
 		return null;
 	}
 
 	@Override
 	public E peek() {
 		if (stackSize != 0) {
-			return (E) top;
+			return (E) this.top;
 		} else {
 			return null;
 		}
