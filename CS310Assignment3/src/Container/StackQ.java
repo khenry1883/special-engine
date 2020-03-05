@@ -40,7 +40,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 				this.getDeQStack().push(this.getEnQStack().pop());
 			}
 		}
-		return this.getDeQStack().toString() + this.getEnQStack().toString();
+		return " " + this.getDeQStack().toString() + this.getEnQStack().toString();
 	}
 
 	@Override

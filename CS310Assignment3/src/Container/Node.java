@@ -11,6 +11,13 @@ public class Node<E> {
 		this.nextNode = nextNode;
 	}
 
+	// overwrite toString method
+	public String toString() {
+		String str = "";
+		str += getData();
+		return str;
+	}
+
 	public Node(E data) {
 		this(data, null);
 	}

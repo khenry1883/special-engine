@@ -32,7 +32,7 @@ public class DataClass {
 
 	public String toString() {
 		String str = "";
-		str += "Data Name: " + getDataName() + "Data ID: " + getDataID();
+		str += "Data Name: " + getDataName() + " Data ID: " + getDataID();
 		return str;
 	}
 
