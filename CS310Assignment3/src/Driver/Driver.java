@@ -90,7 +90,7 @@ public class Driver {
 				System.out.println("Queue size: " + queue.queueSize);
 				break;
 			case "g": // For when user wants to exit
-				System.out.print("Good-bye!");
+				System.out.println("Good-bye!");
 				break;
 			default: // When user inputs a number not given
 				System.out.println(
