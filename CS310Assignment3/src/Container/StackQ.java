@@ -6,7 +6,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 
 	private LLStack<E> enQStack; // mandatory variable
 	private LLStack<E> deQStack; // mandatory variable
-	public int queueSize; // custom
+	public int queueSize = 0; // custom
 
 	// constructor
 	StackQ() {

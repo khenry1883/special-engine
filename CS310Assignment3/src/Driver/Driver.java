@@ -22,8 +22,7 @@ public class Driver {
 	public static void main(String[] args) {
 		Driver driver = new Driver();
 		int ID = 0;
-		char letter;
-		String name = "";
+		String name, letter = "";
 		LLStack enQStack;
 		LLStack deQStack;
 		StackQ<DataClass> queue = null;
@@ -41,10 +40,10 @@ public class Driver {
 
 			// Asks user for letter to input
 			Scanner input = new Scanner(System.in);
-			letter = input.next().charAt(0);
+			letter = input.nextLine();
 
 			switch (letter) {
-			case 'a': // For when user wants to enqueue in the queue
+			case "a": // For when user wants to enqueue in the queue
 				System.out.println("Input a name for the data to enqueue: ");
 				name = input.nextLine();
 				System.out.println("Input an ID for the data to enqueue: ");
@@ -52,25 +51,45 @@ public class Driver {
 				DataClass val = new DataClass(name, ID);
 				queue.enQ(val);
 				break;
-			case 'b': // For when user wants to dequeue from the queue
-				while (!queue.isEmpty()) {
-					queue.deQ();
+			case "b": // For when user wants to dequeue from the queue
+				if (queue.isEmpty()) {
+					System.out.println("Queue is empty!");
+					break;
+				} else {
+					while (!queue.isEmpty()) {
+						queue.deQ();
+					}
+					break;
 				}
-				break;
-			case 'c': // For when user wants to peek from the queue
-				queue.peek();
-				break;
-			case 'd': // For when user wants to display the queue
-				queue.toString();
-				break;
-			case 'e': // For when user wants to display enQStack and deQStack
-				queue.getEnQStack().toString();
-				queue.getDeQStack().toString();
-				break;
-			case 'f': // For when user wants to display size of queue
+			case "c": // For when user wants to peek from the queue
+				if (queue.isEmpty()) {
+					System.out.println("Queue is empty!");
+					break;
+				} else {
+					queue.peek();
+					break;
+				}
+			case "d": // For when user wants to display the queue
+				if (queue.isEmpty()) {
+					System.out.println("Queue is empty!");
+					break;
+				} else {
+					queue.toString();
+					break;
+				}
+			case "e": // For when user wants to display enQStack and deQStack
+				if (queue.isEmpty()) {
+					System.out.println("Queue is empty!");
+					break;
+				} else {
+					queue.getEnQStack().toString();
+					queue.getDeQStack().toString();
+					break;
+				}
+			case "f": // For when user wants to display size of queue
 				System.out.println("Queue size: " + queue.queueSize);
 				break;
-			case 'g': // For when user wants to exit
+			case "g": // For when user wants to exit
 				System.out.print("Good-bye!");
 				break;
 			default: // When user inputs a number not given
@@ -79,7 +98,7 @@ public class Driver {
 				break;
 			}
 
-		} while (letter != 'g');
+		} while (letter != "g");
 	}
 
 }
