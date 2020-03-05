@@ -13,20 +13,31 @@ public class LLStack<E> implements StackSpecs<E> {
 		this.stackSize = stackSize;
 	}
 
+	// getters and setters
+	public void setTop(Node<E> top) {
+		this.top = top;
+	}
+
+	public Node<E> getTop() {
+		return this.top;
+	}
+
+	public void setStackSize(int stackSize) {
+		this.stackSize = stackSize;
+	}
+
+	public int getStackSize() {
+		return this.stackSize;
+	}
+
 	// override toString (display stack)
 	@Override
 	public String toString() {
-		Node<E> curr = this.top;
-		StringBuilder str = new StringBuilder();
-		str.append("\n{");
-
-		while (curr != null) {
-			str.append("Data:" + curr.getData() + " ");
-			curr = curr.getNextNode();
+		String str = "";
+		for (int i = 0; i <= stackSize; i++) {
+			str += top.getData();
 		}
-		str.append("}");
-
-		return str.toString();
+		return str;
 	}
 
 	@Override

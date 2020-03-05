@@ -15,16 +15,32 @@ public class StackQ<E> implements QueueSpecs<E> {
 		this.queueSize = queueSize;
 	}
 
+	// getters and setters
+	public void setEnQStack(LLStack<E> enQStack) {
+		this.enQStack = enQStack;
+	}
+
+	public LLStack<E> getEnQStack() {
+		return this.enQStack;
+	}
+
+	public void setDeQStack(LLStack<E> deQStack) {
+		this.deQStack = deQStack;
+	}
+
+	public LLStack<E> getDeQStack() {
+		return this.deQStack;
+	}
+
 	// override toString
 	@Override
 	public String toString() {
-		if (queueSize == 0) {
-			return "Queue is empty.";
-		} else {
-			for (int i = 0; i <= queueSize; i++) {
-				System.out.println();
+		if (this.getDeQStack().isEmpty()) {
+			while (!this.getEnQStack().isEmpty()) {
+				this.getDeQStack().push(this.getEnQStack().pop());
 			}
 		}
+		return this.getDeQStack().toString() + this.getEnQStack().toString();
 	}
 
 	@Override
