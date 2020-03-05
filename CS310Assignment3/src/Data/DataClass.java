@@ -30,4 +30,10 @@ public class DataClass {
 		this.dataID = dataID;
 	}
 
+	public String toString() {
+		String str = "";
+		str += "Data Name: " + getDataName() + "Data ID: " + getDataID();
+		return str;
+	}
+
 }

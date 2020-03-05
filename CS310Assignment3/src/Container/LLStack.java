@@ -8,7 +8,7 @@ public class LLStack<E> implements StackSpecs<E> {
 	private int stackSize; // mandatory variable
 
 	// constructor
-	LLStack() {
+	public LLStack() {
 		this.top = top;
 		this.stackSize = stackSize;
 	}
@@ -75,6 +75,7 @@ public class LLStack<E> implements StackSpecs<E> {
 	@Override
 	public E peek() {
 		if (stackSize != 0) {
+			System.out.println(this.top.toString());
 			return (E) this.top;
 		} else {
 			return null;

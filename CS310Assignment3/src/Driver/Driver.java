@@ -23,9 +23,9 @@ public class Driver {
 		Driver driver = new Driver();
 		int ID = 0;
 		String name, letter = "";
-		LLStack enQStack;
-		LLStack deQStack;
-		StackQ<DataClass> queue = null;
+		LLStack enQStack = new LLStack();
+		LLStack deQStack = new LLStack();
+		StackQ<DataClass> queue = new StackQ<DataClass>();
 		do {
 			// Intro to program
 			System.out.println("User Menu:");

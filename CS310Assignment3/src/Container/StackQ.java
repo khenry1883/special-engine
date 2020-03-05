@@ -9,9 +9,9 @@ public class StackQ<E> implements QueueSpecs<E> {
 	public int queueSize = 0; // custom
 
 	// constructor
-	StackQ() {
-		this.enQStack = enQStack;
-		this.deQStack = deQStack;
+	public StackQ() {
+		this.enQStack = new LLStack<E>();
+		this.deQStack = new LLStack<E>();
 		this.queueSize = queueSize;
 	}
 
@@ -82,7 +82,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 	@Override
 	public E peek() {
 		if (deQStack != null && enQStack != null) {
-			return deQStack.peek(); // use stack's peek method
+			return enQStack.peek(); // use stack's peek method
 		}
 		return null;
 	}
