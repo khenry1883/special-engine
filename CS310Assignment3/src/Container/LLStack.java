@@ -70,7 +70,7 @@ public class LLStack<E> implements StackSpecs<E> {
 			Node<E> toDel = this.top;
 			this.top = this.top.getNextNode();
 			stackSize--;
-			return (E) this.top;
+			return (E) toDel;
 		} else {
 			return null;
 		}
