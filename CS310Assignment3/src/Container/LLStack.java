@@ -34,7 +34,7 @@ public class LLStack<E> implements StackSpecs<E> {
 	@Override
 	public String toString() {
 		String str = "";
-		for (int i = 0; i <= stackSize; i++) {
+		for (int i = 0; i < stackSize; i++) {
 			str += top.toString();
 		}
 		return str;
@@ -66,10 +66,14 @@ public class LLStack<E> implements StackSpecs<E> {
 
 	@Override
 	public E pop() { // always delete at the beginning
-		Node<E> toDel = this.top;
-		this.top = this.top.getNextNode();
-		stackSize--;
-		return null;
+		if (stackSize > 0) {
+			Node<E> toDel = this.top;
+			this.top = this.top.getNextNode();
+			stackSize--;
+			return (E) this.top;
+		} else {
+			return null;
+		}
 	}
 
 	@Override

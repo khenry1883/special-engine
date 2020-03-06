@@ -13,7 +13,6 @@ package Driver;
 
 import java.util.Scanner;
 
-import Container.LLStack;
 import Container.StackQ;
 import Data.DataClass;
 
@@ -23,8 +22,6 @@ public class Driver {
 		Driver driver = new Driver();
 		int ID = 0;
 		String name, letter = "";
-		LLStack enQStack = new LLStack();
-		LLStack deQStack = new LLStack();
 		StackQ<DataClass> queue = new StackQ<DataClass>();
 		do {
 			// Intro to program
@@ -73,7 +70,7 @@ public class Driver {
 				if (queue.isEmpty()) {
 					System.out.println("Queue is empty!");
 					break;
-				} else if ((!enQStack.isEmpty() || !deQStack.isEmpty())) {
+				} else if ((!queue.getEnQStack().isEmpty() || !queue.getDeQStack().isEmpty())) {
 					System.out.println("Queue: " + queue.toString());
 					break;
 				}
@@ -82,7 +79,7 @@ public class Driver {
 				if (queue.isEmpty()) {
 					System.out.println("Queue is empty!");
 					break;
-				} else if ((!enQStack.isEmpty() || !deQStack.isEmpty())) {
+				} else if ((!queue.getEnQStack().isEmpty() || !queue.getDeQStack().isEmpty())) {
 					System.out.println("enQStack: " + queue.getEnQStack().toString());
 					System.out.println("deQStack: " + queue.getDeQStack().toString());
 					break;
