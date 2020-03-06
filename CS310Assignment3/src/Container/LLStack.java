@@ -35,7 +35,7 @@ public class LLStack<E> implements StackSpecs<E> {
 	public String toString() {
 		String str = "";
 		for (int i = 0; i <= stackSize; i++) {
-			str += top.getData();
+			str += top.toString();
 		}
 		return str;
 	}

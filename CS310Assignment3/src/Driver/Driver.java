@@ -73,17 +73,17 @@ public class Driver {
 				if (queue.isEmpty()) {
 					System.out.println("Queue is empty!");
 					break;
-				} else {
-					queue.toString();
+				} else if ((!enQStack.isEmpty() || !deQStack.isEmpty())) {
+					System.out.println("Queue: " + queue.toString());
 					break;
 				}
 			case "e": // For when user wants to display enQStack and deQStack
-				if (queue.isEmpty()) {
+				if (queue.isEmpty() && (!enQStack.isEmpty() || !deQStack.isEmpty())) {
 					System.out.println("Queue is empty!");
 					break;
-				} else {
-					queue.getEnQStack().toString();
-					queue.getDeQStack().toString();
+				} else if ((!enQStack.isEmpty() || !deQStack.isEmpty())) {
+					System.out.println("enQStack: " + queue.getEnQStack().toString());
+					System.out.println("deQStack: " + queue.getDeQStack().toString());
 					break;
 				}
 			case "f": // For when user wants to display size of queue

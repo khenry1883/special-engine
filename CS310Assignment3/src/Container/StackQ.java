@@ -21,7 +21,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 	}
 
 	public LLStack<E> getEnQStack() {
-		return this.enQStack;
+		return enQStack;
 	}
 
 	public void setDeQStack(LLStack<E> deQStack) {
@@ -29,7 +29,7 @@ public class StackQ<E> implements QueueSpecs<E> {
 	}
 
 	public LLStack<E> getDeQStack() {
-		return this.deQStack;
+		return deQStack;
 	}
 
 	// override toString
