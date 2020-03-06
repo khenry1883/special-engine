@@ -13,8 +13,8 @@ public class Node<E> {
 
 	// overwrite toString method
 	public String toString() {
-		String str = "";
-		str += getData();
+		// String str = "";
+		String str = "I got here " + getData().toString();
 		return str;
 	}
 
